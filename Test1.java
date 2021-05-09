@@ -71,6 +71,20 @@ public class Test1 {
      * [Emp{eid=4, did='OPS', amt=320}, Emp{eid=1, did='IT', amt=400}]
      * Process finished with exit code 0
      */
+    
+    
+    /*SQL Solution 
+     *Assume Table (T) struture -> 
+     *  eId -> int
+     *  dId -> string
+     *  samt -> int
+     *
+     *SELECT t1.eId as empId,  t1.dId as deptId , t1.samt as sAmt, DENSE_RANK() OVER (partition by t1.dId order by t1.samt desc) rank 
+     *        FROM  (Select t.empId as eId ,  t.deptId as dId, sum(t.saleId) as samt from T t group by empId,deptId)as Temptable t1 
+     *        WHERE rank =2 order by dId;  
+     *
+     *Output Columns -> empId deptId sAmt rank 
+     */
 
 
     public static void main(String[] args) {
