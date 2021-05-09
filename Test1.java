@@ -83,7 +83,9 @@ public class Test1 {
      *        FROM  (Select t.empId as eId ,  t.deptId as dId, sum(t.saleId) as samt from T t group by empId,deptId)as Temptable t1 
      *        WHERE rank =2 order by dId;  
      *
-     *Output Columns -> empId deptId sAmt rank 
+     *Output Columns -> empId deptId sAmt rank
+     *                     1    IT   400   2
+     *                     4    OPS  320   2
      */
 
 
